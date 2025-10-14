@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      width: 300px;
+      padding: 15px;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+    }
+    h1 {
+      font-size: 18px;
+      margin: 0 0 15px 0;
+      color: #333;
+    }
+    .control-group {
+      margin-bottom: 15px;
+      padding: 12px;
+      background: white;
+      border-radius: 6px;
+      border: 1px solid #e0e0e0;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #555;
+      font-weight: bold;
+    }
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+      cursor: pointer;
+    }
+    .checkbox-label input[type="checkbox"] {
+      margin-right: 8px;
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+    input[type="range"] {
+      width: 100%;
+      cursor: pointer;
+    }
+    #speedValue, #smoothValue {
+      display: inline-block;
+      background: #007bff;
+      color: white;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-weight: bold;
+      margin-left: 8px;
+    }
+    .smooth-controls {
+      opacity: 1;
+      transition: opacity 0.2s;
+    }
+    .smooth-controls.disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    .speed-controls {
+      opacity: 1;
+      transition: opacity 0.2s;
+    }
+    .speed-controls.disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    .control-group:first-child {
+      pointer-events: auto !important;
+      opacity: 1 !important;
+    }
+    button {
+      width: 100%;
+      padding: 8px;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    button:hover {
+      background: #218838;
+    }
+  </style>
+</head>
+<body>
+  <h1>Scroll Settings</h1>
+  
+  <div class="control-group">
+    <label style="margin-bottom: 10px;">Current Site:</label>
+    <div style="display: flex; gap: 8px;">
+      <button id="enableSiteBtn" style="flex: 1; background: #28a745;">Enable</button>
+      <button id="disableSiteBtn" style="flex: 1; background: #dc3545;">Disable</button>
+    </div>
+    <div id="siteStatus" style="margin-top: 8px; padding: 8px; background: #e8f5e9; border-radius: 4px; text-align: center; font-size: 12px; color: #2e7d32; font-weight: bold;">
+      Extension Enabled
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="checkbox-label">
+      <input type="checkbox" id="speedCheckbox">
+      <span>Enable Speed Multiplier</span>
+    </label>
+    
+    <div class="speed-controls" id="speedControls">
+      <label for="speedSlider">
+        Multiplier: <span id="speedValue">1.0x</span>
+      </label>
+      <input type="range" id="speedSlider" min="0" max="10" step="0.1" value="1.0">
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="checkbox-label">
+      <input type="checkbox" id="smoothCheckbox">
+      <span>Enable Smooth Scrolling</span>
+    </label>
+    
+    <div class="smooth-controls" id="smoothControls">
+      <label for="smoothSlider">
+        Duration: <span id="smoothValue">300ms</span>
+      </label>
+      <input type="range" id="smoothSlider" min="100" max="1000" step="50" value="300">
+    </div>
+  </div>
+  
+  <button id="resetBtn">Reset All to Default</button>
+
+  <script src="popup.js"></script>
+</body>
+</html>
