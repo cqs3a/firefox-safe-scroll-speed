@@ -4,5 +4,8 @@ require constant scrolling. Change the speed and the smooth scroll
 animation time quickly. Enabled per webpage and as needed.
 
 
-Inline-style: 
+Disabled: 
 ![alt text](https://github.com/cqs3a/firefox-safe-scroll-speed/blob/66c590b17754a4937231e76d0938b8549ff219d8/images/disabled.png)
+
+Enabled: 
+![alt text](https://github.com/cqs3a/firefox-safe-scroll-speed/blob/66c590b17754a4937231e76d0938b8549ff219d8/images/enabled.png)
